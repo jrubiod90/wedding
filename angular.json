@@ -30,7 +30,8 @@
             "scripts": [
               "src/assets/js/glanz_library.js",
               "src/assets/js/glanz_script.js"
-            ]
+            ],
+			"baseHref": "/wedding/"
           },
           "configurations": {
             "production": {
