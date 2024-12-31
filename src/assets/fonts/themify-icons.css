@@ -11,7 +11,7 @@
 
 @font-face {
     font-family: 'RougeScript';
-	src: url("assets/fonts/fonts/RougeScript-Regular.ttf");
+	src: url("fonts/RougeScript-Regular.ttf");
 }
 
 [class^="ti-"], [class*=" ti-"] {
