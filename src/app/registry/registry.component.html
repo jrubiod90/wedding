@@ -1,39 +1,117 @@
-<!-- Page -->
-<div class="gla_page" id="gla_page">
-
-<!-- NAVIGATION -->
 <app-top-nav></app-top-nav>
-<!-- END of NAVIGATION -->
 
-<!-- Content -->
-<section id="gla_content" class="gla_content">
+<div class="container text-center">
+    <h2 style="margin-bottom: 10px; margin-top: 50px;">Asistencia</h2>
+    <p style="margin-bottom: 50px;">Completa el siguiente formulario para confirmar tu asistencia.</p>
 
-    <!-- section -->
-    <section class="gla_section">
-        
-        <div class="container text-center">
-
-            <!-- <p class="text-center"><img src="assets/images/flowers_slider/flowertop.png" data-bottom-top="@src:assets/images/flowers_slider/flowertop.png" height="150" alt=""></p> -->
-            <h2 class="text-center" style="margin-bottom: 10px; margin-top: 50px;">Asistencia</h2>
-            <p style="margin-bottom: 50px;">Completa el siguiente formulario para confirmar tu asistencia. Te lo agradecemos!</p>
-
-            <div class="registry col-sm-4 col-sm-offset-4">
-                <a href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/546880578">
-                    <img src="assets/images/bedbathandbeyond.svg" alt="Bed Bath and Beyond logo" class="logo" style="width: 250px;">
-                </a>
-                <div>
-                    <p> <strong>Registry ID:</strong> 546880578</p>
-                    <a class="btn button btn-sm" href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/546880578" target="_blank" role="button">Shop the registry!</a>
-                </div>
-            </div>
-            
+    <div class="col-sm-6 col-sm-offset-3">
+      <form (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label>Nombre:</label>
+          <input type="text" class="form-control" [(ngModel)]="name" name="name" required>
         </div>
-        <!-- container end -->
+        <div class="form-group">
+            <label>Apellidos:</label>
+            <input type="text" class="form-control" [(ngModel)]="surnames" name="surnames" required>
+          </div>
+        <div class="form-group">
+          <label>Correo electrónico:</label>
+          <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label>¿Asistirás?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" [(ngModel)]="attendance" name="attendance" [value]="true" required> Sí
+            </label>
+            <label>
+              <input type="radio" [(ngModel)]="attendance" name="attendance" [value]="false"> No
+            </label>
+          </div>
+        </div>
 
-    </section>
+        <div *ngIf="attendance">
+          <label>En cuanto al menú, ¿hay alguna preferencia alimentaria que debamos saber?</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" [(ngModel)]="menu" name="menu" value="normal" required checked> No, ninguna
+            </label>
+            <label>
+              <input type="radio" [(ngModel)]="menu" name="menu" value="vegan"> Vegano
+            </label>
+            <label>
+              <input type="radio" [(ngModel)]="menu" name="menu" value="vegetarian"> Vegetariano
+            </label>
+          </div>
+          
+          <!-- Alergias no es obligatorio -->
+          <div class="form-group">
+            <label>¿Alguna alergia?:</label>
+            <input type="text" class="form-control" [(ngModel)]="allergies" name="allergies">
+          </div>
+          
+          <div class="form-group">
+            <label>¿Necesitas asistencia especial?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" [(ngModel)]="needsAssistance" name="needsAssistance" [value]="true" required> Sí
+              </label>
+              <label>
+                <input type="radio" [(ngModel)]="needsAssistance" name="needsAssistance" [value]="false" required> No
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Número de acompañantes:</label>
+            <input type="number" class="form-control" [(ngModel)]="companionsCount" name="companionsCount" (input)="updateCompanionsFields()" min="0" required>
+          </div>
 
-</section>
-<!-- section end -->
+          <div *ngFor="let companion of companions; let i = index" class="form-group">
+            <label>Nombre del acompañante {{ i + 1 }}:</label>
+            <input type="text" class="form-control" [(ngModel)]="companion.name" name="companion{{i}}Name" required>
 
+            <label>Apellidos del acompañante {{ i + 1 }}:</label>
+            <input type="text" class="form-control" [(ngModel)]="companion.surnames" name="companion{{i}}Surnames" required>
+
+            <label>En cuanto al menú del acompañante {{ i + 1 }}, ¿hay alguna preferencia alimentaria que debamos saber?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="normal" required> No, ninguna
+              </label>
+              <label>
+                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="vegan"> Vegano
+              </label>
+              <label>
+                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="vegetarian"> Vegetariano
+              </label>
+            </div>
+
+            <!-- Alergias no es obligatorio para los acompañantes -->
+            <div class="form-group">
+              <label>¿Alguna alergia?:</label>
+              <input type="text" class="form-control" [(ngModel)]="companion.allergies" name="companion{{i}}Allergies">
+            </div>
+
+            <label>¿El acompañante {{ i + 1 }} necesita asistencia especial?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="true" required> Sí
+              </label>
+              <label>
+                <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="false" checked required> No
+              </label>
+            </div>
+
+          </div>
+          
+          <!-- Sugerencias de canciones no es obligatorio -->
+          <div class="form-group">
+            <label>Sugerencias de canciones:</label>
+            <input type="text" class="form-control" [(ngModel)]="suggestedSongs" name="suggestedSongs">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirmar asistencia</button>
+      </form>
+      <p class="message-text" [ngClass]="{'success-text': formMessage.includes('Gracias'), 'error-text': formMessage.includes('Error')}">{{ formMessage }}</p>
+    </div>
 </div>
-<!-- page end -->

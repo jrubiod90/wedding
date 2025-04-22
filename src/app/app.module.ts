@@ -17,6 +17,7 @@ import { PresentsComponent } from './presents/presents.component';
 import { SongRequestComponent } from './song-request/song-request.component';
 import { SongRequestService } from './services/songRequest.service';
 import { TopNavComponent } from './top-nav/top-nav.component';
+import { ReservationComponent } from './reservation/reservation.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
@@ -44,7 +45,8 @@ const routes: Routes = [
     FaqComponent,
     TopNavComponent,
     RegistryComponent,
-    PresentsComponent
+    PresentsComponent,
+    ReservationComponent
   ],
   imports: [
     HttpModule,

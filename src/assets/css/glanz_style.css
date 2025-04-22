@@ -214,7 +214,7 @@ h1.gla_h1_title {
 	margin-top: 0;
 }
 h2 {
-	font:400 24rem Dosis, Arial;
+	font:4000 24rem Dosis, Arial;
 	line-height: 1.125;
 	margin-top: 0;
 	color: #333;
@@ -321,7 +321,7 @@ h3 {
     margin-top: -10px;
 	}
 h4 {
-	font:italic 400 22px/30px Playfair Display, Arial;
+	font:italic 400 30px/40px Playfair Display, Arial;
 	margin-bottom: 10px;
 }
 
