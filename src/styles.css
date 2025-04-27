@@ -4,6 +4,67 @@
   .mobile #homepage-image-tint {
     background-position: -350px 0px;
   }
+
+  #homepage-image-tint {
+    background-size: cover; /* Asegura que la imagen cubra el contenedor */
+    background-position: center center; /* Centrar la imagen */
+    background-repeat: no-repeat;
+    height: auto; /* Ajustar la altura automáticamente */
+    padding: 20px; /* Añadir espacio interno */
+  }
+
+  /* Ajustar las flores para móviles */
+  .gla_slider_flower_item {
+    width: 50px; /* Reducir el tamaño */
+    height: 50px;
+    position: absolute;
+  }
+
+  .gla_slider_flower_c1 {
+    top: 10px;
+    left: 10px;
+  }
+
+  .gla_slider_flower_c2 {
+    top: 10px;
+    right: 10px;
+  }
+
+  .gla_slider_flower_c3 {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .gla_slider_flower_c4 {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  /* Eliminar ajustes de texto */
+  /* .container.text-center h2 {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+
+  .container.text-center h3 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .container.text-center p img {
+    max-width: 100%;
+    height: auto;
+  } */
+}
+
+/* Ajustar la imagen de fondo para móviles */
+@media (max-width: 768px) {
+  #homepage-image-tint {
+    background-size: cover !important; /* Asegura que la imagen cubra el contenedor */
+    background-position: 80% center !important; /* Centrar más hacia la derecha */
+    background-repeat: no-repeat !important;
+    height: 100vh; /* Asegura que ocupe toda la altura visible */
+  }
 }
 
 /* @media (min-width: 601px) and (max-width: 800px) {
