@@ -2,8 +2,8 @@
   "name": "wedding-angular",
   "version": "0.0.0",
   "scripts": {
-    "ng": "set NODE_OPTIONS=--openssl-legacy-provider && ng",
-    "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
+	"ng": "set NODE_OPTIONS=--openssl-legacy-provider && ng",
+	"start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -40,7 +40,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/jquery": "^3.3.6",
     "@types/node": "~10.3.3",
-    "angular-cli-ghpages": "^2.0.3",
     "codelyzer": "~4.3.0",
     "jasmine": "^3.2.0",
     "jasmine-core": "~3.1.0",
