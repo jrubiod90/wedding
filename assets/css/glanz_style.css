@@ -214,7 +214,7 @@ h1.gla_h1_title {
 	margin-top: 0;
 }
 h2 {
-	font:400 24rem Dosis, Arial;
+	font:4000 24rem Dosis, Arial;
 	line-height: 1.125;
 	margin-top: 0;
 	color: #333;
@@ -321,7 +321,7 @@ h3 {
     margin-top: -10px;
 	}
 h4 {
-	font:italic 400 22px/30px Playfair Display, Arial;
+	font:italic 400 30px/40px Playfair Display, Arial;
 	margin-bottom: 10px;
 }
 
@@ -2856,8 +2856,8 @@ ul.mega-menu {
 
 .gla_slider_flower_c1 {
 	background: url(../images/flowers_slider/fl1_c1_test-removebg-preview.png);
-	width: 850px;
-	height: 600px;
+	width: 650px;
+	height: 400px;
 	-webkit-background-size: cover;
 	background-size: cover;
 	position: absolute;
@@ -2871,8 +2871,8 @@ ul.mega-menu {
 	
 .gla_slider_flower_c2 {
 	background: url(../images/flowers_slider/fl1_c2_test-removebg-preview.png);
-	width: 850px;
-	height: 580px;
+	width: 650px;
+	height: 380px;
 	-webkit-background-size: cover;
 	background-size: cover;
 	position: absolute;
@@ -2885,8 +2885,8 @@ ul.mega-menu {
 	}
 .gla_slider_flower_c3 {
 	background: url(../images/flowers_slider/fl1_c3_test-removebg-preview.png);
-	width: 880px;
-	height: 580px;
+	width: 600px;
+	height: 380px;
 	-webkit-background-size: cover;
 	background-size: cover;
 	position: absolute;
@@ -2899,8 +2899,8 @@ ul.mega-menu {
 	}
 .gla_slider_flower_c4 {
 	background: url(../images/flowers_slider/fl1_c4_test-removebg-preview.png);
-	width: 850px;
-	height: 600px;
+	width: 650px;
+	height: 400px;
 	-webkit-background-size: cover;
 	background-size: cover;
 	position: absolute;
