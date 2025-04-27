@@ -6,6 +6,44 @@
   }
 }
 
+/* Ajustar la imagen de fondo para móviles */
+@media (max-width: 768px) {
+  #homepage-image-tint {
+    background-size: contain !important; /* Asegura que toda la imagen sea visible */
+    background-position: center !important; /* Centrar la imagen */
+    background-repeat: no-repeat !important;
+  }
+}
+
+/* Ajustar las flores para pantallas pequeñas */
+@media (max-width: 768px) {
+  .gla_slider_flower_item {
+    width: 50px; /* Reducir el tamaño */
+    height: 50px;
+    top: auto !important; /* Ajustar la posición */
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+  }
+}
+
+/* Ajustar el texto y márgenes para móviles */
+@media (max-width: 768px) {
+  .gla_slide_midtitle {
+    font-size: 24px; /* Reducir el tamaño del título */
+    line-height: 1.2;
+  }
+
+  h2, h3 {
+    font-size: 18px; /* Reducir los encabezados */
+    margin: 10px 0;
+  }
+
+  .container {
+    padding: 10px; /* Reducir el padding */
+  }
+}
+
 /* @media (min-width: 601px) and (max-width: 800px) {
   .gla_slider_flower_c1 {
     left: -200px;
