@@ -6276,4 +6276,36 @@ header nav.active .gla_logo {
 /*Responsive end*/
 
 
+/* ===== Desktop (ya está bien con tus valores actuales) ===== */
 
+
+/* ===== Tablet (pantallas ≤ 992px) ===== */
+@media (max-width: 992px) {
+  .container.text-center h2 {
+    font-size: 60px;
+    line-height: 65px;
+    max-width: 80%;
+  }
+
+  .container.text-center h3 {
+    font-size: 28px;
+    line-height: 36px;
+    max-width: 90%;
+  }
+}
+
+/* ===== Móvil (pantallas ≤ 576px) ===== */
+@media (max-width: 576px) {
+  .container.text-center h2 {
+    font-size: 90px;
+    line-height: 95px;
+    max-width: 90%;
+  }
+
+  .container.text-center h3 {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 10px;
+    max-width: 95%;
+  }
+}

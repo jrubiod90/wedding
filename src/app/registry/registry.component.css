@@ -1,27 +1,89 @@
+/* ------------------------- */
+/* Estilos del formulario */
+/* ------------------------- */
 .radio-group {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.message-text {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.success-text {
+  color: green;
+}
+
+.error-text {
+  color: red;
+}
+
+h2 {
+  margin-top: 0px; /* Aumentar el margen superior */
+}
+
+/* Contenedor principal del registro */
+.registry-page {
+  padding-top: 100px; /* Asegurar separación */
+}
+
+/* Estilos de select */
+select {
+  background-color: white !important;
+  color: black !important;
+}
+
+/* ------------------------- */
+/* Solución para el menú móvil en Registry */
+/* ------------------------- */
+
+/* Forzar que el menú siempre quede encima */
+:host ::ng-deep .gla_main_menu {
+  position: relative;
+  z-index: 9999 !important; /* botón hamburguesa */
+  pointer-events: auto !important; /* aseguramos que reciba clicks */
+}
+
+:host ::ng-deep .gla_main_menu_content {
+  z-index: 9998 !important; /* contenido del menú */
+}
+
+/* ===== Desktop (ya está bien con tus valores actuales) ===== */
+
+
+/* ===== Tablet (pantallas ≤ 992px) ===== */
+@media (max-width: 992px) {
+  .container.text-center h2 {
+    font-size: 60px;
+    line-height: 65px;
+    margin-top: 0px; /* Aumenta este valor si quieres más separación */
+    max-width: 80%;
   }
-  .message-text {
-    margin-top: 15px;
-    font-weight: bold;
+
+  .container.text-center h3 {
+    font-size: 28px;
+    line-height: 36px;
+    max-width: 90%;
   }
-  .success-text {
-    color: green;
+}
+
+/* ===== Móvil (pantallas ≤ 576px) ===== */
+@media (max-width: 576px) {
+  .container.text-center h2 {
+    font-size: 60px;
+    line-height: 44px;
+    max-width: 95%;
+    margin-top: 0px; /* Aumenta este valor si quieres más separación */
+    padding: 0 10px;
   }
-  .error-text {
-    color: red;
+
+  .container.text-center h3 {
+    font-size: 18px;
+    line-height: 24px;
+    padding: 0 10px;
+    max-width: 95%;
   }
-  h2 {
-    margin-top: 80px; /* Aumentar el margen superior */
-  }
-.container {
-    padding-top: 100px; /* Asegurar separación */
-  }
-  select {
-    background-color: white !important;
-    color: black !important;
-  }
-  
+}

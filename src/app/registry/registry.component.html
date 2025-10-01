@@ -1,7 +1,8 @@
 <app-top-nav></app-top-nav>
 
-<div class="container text-center">
-    <h2 style="margin-bottom: 10px; margin-top: 50px;">Asistencia</h2>
+<!-- Le damos una clase única "registry-page" -->
+<div class="registry-page container text-center">
+    <h2 style="margin-bottom: 10px;">Asistencia</h2>
     <p style="margin-bottom: 50px;">Completa el siguiente formulario para confirmar tu asistencia.</p>
 
     <div class="col-sm-6 col-sm-offset-3">
@@ -44,9 +45,9 @@
             </label>
           </div>
           
-          <!-- Alergias no es obligatorio -->
+          <!-- Las alergias no son obligatorias -->
           <div class="form-group">
-            <label>¿Alguna alergia?:</label>
+            <label>¿Alguna alergia?</label>
             <input type="text" class="form-control" [(ngModel)]="allergies" name="allergies">
           </div>
           
@@ -86,9 +87,9 @@
               </label>
             </div>
 
-            <!-- Alergias no es obligatorio para los acompañantes -->
+            <!-- Las alergias no son obligatorias para los acompañantes -->
             <div class="form-group">
-              <label>¿Alguna alergia?:</label>
+              <label>¿Alguna alergia?</label>
               <input type="text" class="form-control" [(ngModel)]="companion.allergies" name="companion{{i}}Allergies">
             </div>
 
@@ -101,10 +102,9 @@
                 <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="false" checked required> No
               </label>
             </div>
-
           </div>
           
-          <!-- Sugerencias de canciones no es obligatorio -->
+          <!-- Las sugerencias de canciones no son obligatorias -->
           <div class="form-group">
             <label>Sugerencias de canciones:</label>
             <input type="text" class="form-control" [(ngModel)]="suggestedSongs" name="suggestedSongs">
