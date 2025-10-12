@@ -43,6 +43,9 @@
             <label>
               <input type="radio" [(ngModel)]="menu" name="menu" value="vegetarian"> Vegetariano
             </label>
+            <label>
+              <input type="radio" [(ngModel)]="menu" name="menu" value="child"> Infantil
+            </label>
           </div>
           
           <!-- Las alergias no son obligatorias -->
@@ -62,6 +65,20 @@
               </label>
             </div>
           </div>
+
+          <div class="form-group">
+            <label>Celebaremos una pequeña preboda el día de antes (19 de Diciembre) a las 20:00</label>
+            <label>¿Asistirás a la preboda?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" [(ngModel)]="preboda" name="preboda" [value]="true" required> Sí
+              </label>
+              <label>
+                <input type="radio" [(ngModel)]="preboda" name="preboda" [value]="false" required> No
+              </label>
+            </div>
+          </div>
+
           <div class="form-group">
             <label>Número de acompañantes:</label>
             <input type="number" class="form-control" [(ngModel)]="companionsCount" name="companionsCount" (input)="updateCompanionsFields()" min="0" required>
@@ -102,7 +119,19 @@
                 <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="false" checked required> No
               </label>
             </div>
+          
+          
+            <label>¿El acompañante {{ i + 1 }} asistirá a la preboda el dia 19 por la noche?</label>
+            <div class="radio-group">
+              <label>
+                <input type="radio" [(ngModel)]="companion.preboda" name="companion{{i}}Preboda" [value]="true" required> Sí
+              </label>
+              <label>
+                <input type="radio" [(ngModel)]="companion.preboda" name="companion{{i}}Preboda" [value]="false" checked required> No
+              </label>
+            </div>
           </div>
+
           
           <!-- Las sugerencias de canciones no son obligatorias -->
           <div class="form-group">

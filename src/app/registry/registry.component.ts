@@ -15,8 +15,9 @@ export class RegistryComponent implements AfterViewInit {
   allergies = '';
   suggestedSongs = '';
   needsAssistance: boolean | null = false;
+  preboda: boolean | null = false;
   companionsCount = 0;
-  companions: { name: string; surnames: string; menu: string; needsAssistance: boolean; attendance: boolean, allergies: string }[] = [];
+  companions: { name: string; surnames: string; menu: string; needsAssistance: boolean; preboda: boolean; attendance: boolean, allergies: string }[] = [];
   formMessage = '';
   azureFunctionUrl = 'https://rspvfunctionapp.azurewebsites.net/api/InsertGuest';
 
@@ -24,6 +25,7 @@ export class RegistryComponent implements AfterViewInit {
     none: false,
     vegan: false,
     vegetarian: false,
+    child: false,
     other: false
   };
 
@@ -42,6 +44,7 @@ export class RegistryComponent implements AfterViewInit {
       surnames: '',
       menu: 'normal',
       needsAssistance: false,
+      preboda: false,
       attendance: null,
       allergies: ''
     }));
@@ -73,6 +76,7 @@ export class RegistryComponent implements AfterViewInit {
       allergies: this.allergies || '',
       suggestedSongs: this.suggestedSongs || '',
       needsAssistance: this.needsAssistance || false,
+      preboda: this.preboda || false,
       companions: this.companions || []
     };
 
@@ -83,7 +87,15 @@ export class RegistryComponent implements AfterViewInit {
         body: JSON.stringify(formData)
       });
 
-      if (!response.ok) { this.formMessage = 'Hubo un problema al enviar los datos del invitado principal.'; return; }
+      if (!response.ok) { 
+        
+        if(response.status === 409) {
+          this.formMessage = 'Ya existe una confirmación con este correo electrónico.';
+          return;
+        }
+
+        this.formMessage = 'Hubo un problema al enviar los datos del invitado principal.'; 
+        return; }
 
       for (const companion of this.companions) {
         const companionData = {
@@ -93,6 +105,7 @@ export class RegistryComponent implements AfterViewInit {
           menu: companion.menu,
           attendance: this.attendance,
           needsAssistance: companion.needsAssistance || false,
+          preboda: companion.preboda || false,
           allergies: companion.allergies || ''
         };
 
@@ -121,6 +134,7 @@ export class RegistryComponent implements AfterViewInit {
     this.allergies = '';
     this.suggestedSongs = '';
     this.needsAssistance = false;
+    this.preboda = false;
     this.companionsCount = 0;
     this.companions = [];
   }
