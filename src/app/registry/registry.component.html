@@ -1,29 +1,29 @@
 <app-top-nav></app-top-nav>
 
-<!-- Le damos una clase única "registry-page" -->
+<!-- We give it a unique class "registry-page" -->
 <div class="registry-page container text-center">
-    <h2 style="margin-bottom: 10px;">Asistencia</h2>
-    <p style="margin-bottom: 50px;">Completa el siguiente formulario para confirmar tu asistencia.</p>
+    <h2 style="margin-bottom: 10px;">Attendance</h2>
+    <p style="margin-bottom: 50px;">Please fill out the following form to confirm your attendance.</p>
 
     <div class="col-sm-6 col-sm-offset-3">
       <form (ngSubmit)="submitForm()">
         <div class="form-group">
-          <label>Nombre:</label>
+          <label>First Name:</label>
           <input type="text" class="form-control" [(ngModel)]="name" name="name" required>
         </div>
         <div class="form-group">
-            <label>Apellidos:</label>
+            <label>Last Name:</label>
             <input type="text" class="form-control" [(ngModel)]="surnames" name="surnames" required>
           </div>
         <div class="form-group">
-          <label>Correo electrónico:</label>
+          <label>Email:</label>
           <input type="email" class="form-control" [(ngModel)]="email" name="email" required>
         </div>
         <div class="form-group">
-          <label>¿Asistirás?</label>
+          <label>Will you attend?</label>
           <div class="radio-group">
             <label>
-              <input type="radio" [(ngModel)]="attendance" name="attendance" [value]="true" required> Sí
+              <input type="radio" [(ngModel)]="attendance" name="attendance" [value]="true" required> Yes
             </label>
             <label>
               <input type="radio" [(ngModel)]="attendance" name="attendance" [value]="false"> No
@@ -32,33 +32,33 @@
         </div>
 
         <div *ngIf="attendance">
-          <label>En cuanto al menú, ¿hay alguna preferencia alimentaria que debamos saber?</label>
+          <label>Regarding the menu, do you have any dietary preferences we should know about?</label>
           <div class="radio-group">
             <label>
-              <input type="radio" [(ngModel)]="menu" name="menu" value="normal" required checked> No, ninguna
+              <input type="radio" [(ngModel)]="menu" name="menu" value="normal" required checked> None
             </label>
             <label>
-              <input type="radio" [(ngModel)]="menu" name="menu" value="vegan"> Vegano
+              <input type="radio" [(ngModel)]="menu" name="menu" value="vegan"> Vegan
             </label>
             <label>
-              <input type="radio" [(ngModel)]="menu" name="menu" value="vegetarian"> Vegetariano
+              <input type="radio" [(ngModel)]="menu" name="menu" value="vegetarian"> Vegetarian
             </label>
             <label>
-              <input type="radio" [(ngModel)]="menu" name="menu" value="child"> Infantil
+              <input type="radio" [(ngModel)]="menu" name="menu" value="child"> Child
             </label>
           </div>
           
-          <!-- Las alergias no son obligatorias -->
+          <!-- Allergies are not mandatory -->
           <div class="form-group">
-            <label>¿Alguna alergia?</label>
+            <label>Any allergies?</label>
             <input type="text" class="form-control" [(ngModel)]="allergies" name="allergies">
           </div>
           
           <div class="form-group">
-            <label>¿Necesitas asistencia especial?</label>
+            <label>Do you need special assistance?</label>
             <div class="radio-group">
               <label>
-                <input type="radio" [(ngModel)]="needsAssistance" name="needsAssistance" [value]="true" required> Sí
+                <input type="radio" [(ngModel)]="needsAssistance" name="needsAssistance" [value]="true" required> Yes
               </label>
               <label>
                 <input type="radio" [(ngModel)]="needsAssistance" name="needsAssistance" [value]="false" required> No
@@ -67,11 +67,11 @@
           </div>
 
           <div class="form-group">
-            <label>Celebaremos una pequeña preboda el día de antes (19 de Diciembre) a las 20:00</label>
-            <label>¿Asistirás a la preboda?</label>
+            <label>We will have a small pre-wedding event the day before (December 19) at 8:00 PM</label>
+            <label>Will you attend the pre-wedding?</label>
             <div class="radio-group">
               <label>
-                <input type="radio" [(ngModel)]="preboda" name="preboda" [value]="true" required> Sí
+                <input type="radio" [(ngModel)]="preboda" name="preboda" [value]="true" required> Yes
               </label>
               <label>
                 <input type="radio" [(ngModel)]="preboda" name="preboda" [value]="false" required> No
@@ -80,40 +80,40 @@
           </div>
 
           <div class="form-group">
-            <label>Número de acompañantes:</label>
+            <label>Number of companions:</label>
             <input type="number" class="form-control" [(ngModel)]="companionsCount" name="companionsCount" (input)="updateCompanionsFields()" min="0" required>
           </div>
 
           <div *ngFor="let companion of companions; let i = index" class="form-group">
-            <label>Nombre del acompañante {{ i + 1 }}:</label>
+            <label>Companion {{ i + 1 }} First Name:</label>
             <input type="text" class="form-control" [(ngModel)]="companion.name" name="companion{{i}}Name" required>
 
-            <label>Apellidos del acompañante {{ i + 1 }}:</label>
+            <label>Companion {{ i + 1 }} Last Name:</label>
             <input type="text" class="form-control" [(ngModel)]="companion.surnames" name="companion{{i}}Surnames" required>
 
-            <label>En cuanto al menú del acompañante {{ i + 1 }}, ¿hay alguna preferencia alimentaria que debamos saber?</label>
+            <label>Regarding the menu for companion {{ i + 1 }}, do you have any dietary preferences we should know about?</label>
             <div class="radio-group">
               <label>
-                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="normal" required> No, ninguna
+                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="normal" required> None
               </label>
               <label>
-                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="vegan"> Vegano
+                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="vegan"> Vegan
               </label>
               <label>
-                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="vegetarian"> Vegetariano
+                <input type="radio" [(ngModel)]="companion.menu" name="companion{{i}}Menu" value="vegetarian"> Vegetarian
               </label>
             </div>
 
-            <!-- Las alergias no son obligatorias para los acompañantes -->
+            <!-- Allergies are not mandatory for companions -->
             <div class="form-group">
-              <label>¿Alguna alergia?</label>
+              <label>Any allergies?</label>
               <input type="text" class="form-control" [(ngModel)]="companion.allergies" name="companion{{i}}Allergies">
             </div>
 
-            <label>¿El acompañante {{ i + 1 }} necesita asistencia especial?</label>
+            <label>Does companion {{ i + 1 }} need special assistance?</label>
             <div class="radio-group">
               <label>
-                <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="true" required> Sí
+                <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="true" required> Yes
               </label>
               <label>
                 <input type="radio" [(ngModel)]="companion.needsAssistance" name="companion{{i}}NeedsAssistance" [value]="false" checked required> No
@@ -121,10 +121,10 @@
             </div>
           
           
-            <label>¿El acompañante {{ i + 1 }} asistirá a la preboda el dia 19 por la noche?</label>
+            <label>Will companion {{ i + 1 }} attend the pre-wedding event on the night of the 19th?</label>
             <div class="radio-group">
               <label>
-                <input type="radio" [(ngModel)]="companion.preboda" name="companion{{i}}Preboda" [value]="true" required> Sí
+                <input type="radio" [(ngModel)]="companion.preboda" name="companion{{i}}Preboda" [value]="true" required> Yes
               </label>
               <label>
                 <input type="radio" [(ngModel)]="companion.preboda" name="companion{{i}}Preboda" [value]="false" checked required> No
@@ -133,14 +133,14 @@
           </div>
 
           
-          <!-- Las sugerencias de canciones no son obligatorias -->
+          <!-- Song suggestions are not mandatory -->
           <div class="form-group">
-            <label>Sugerencias de canciones:</label>
+            <label>Song suggestions:</label>
             <input type="text" class="form-control" [(ngModel)]="suggestedSongs" name="suggestedSongs">
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Confirmar asistencia</button>
+        <button type="submit" class="btn btn-primary">Confirm attendance</button>
       </form>
-      <p class="message-text" [ngClass]="{'success-text': formMessage.includes('Gracias'), 'error-text': formMessage.includes('Error')}">{{ formMessage }}</p>
+      <p class="message-text" [ngClass]="{'success-text': formMessage.includes('Thank you'), 'error-text': formMessage.includes('Error')}">{{ formMessage }}</p>
     </div>
 </div>

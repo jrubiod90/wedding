@@ -1,5 +1,5 @@
 {
-  "name": "wedding-angular",
+  "name": "weddingEN-angular",
   "version": "0.0.0",
   "scripts": {
 	"ng": "set NODE_OPTIONS=--openssl-legacy-provider && ng",

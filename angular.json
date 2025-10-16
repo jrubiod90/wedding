@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "wedding-angular": {
+    "weddingENEN-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wedding-angular",
+            "outputPath": "dist/weddingENEN-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -56,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "wedding-angular:build"
+            "browserTarget": "weddingENEN-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "wedding-angular:build:production"
+              "browserTarget": "weddingENEN-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wedding-angular:build"
+            "browserTarget": "weddingENEN-angular:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "wedding-angular-e2e": {
+    "weddingENEN-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -114,11 +114,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "wedding-angular:serve"
+            "devServerTarget": "weddingENEN-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "wedding-angular:serve:production"
+              "devServerTarget": "weddingENEN-angular:serve:production"
             }
           }
         },
@@ -134,5 +134,5 @@
       }
     }
   },
-  "defaultProject": "wedding-angular"
+  "defaultProject": "weddingENEN-angular"
 }
